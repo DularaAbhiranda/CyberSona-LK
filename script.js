@@ -67,6 +67,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+// navbar
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
+});
+
 // Matrix Background Effect
 function initMatrixBackground() {
     const matrixBg = document.createElement('div');
